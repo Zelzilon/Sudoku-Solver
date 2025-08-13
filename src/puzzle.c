@@ -8,12 +8,12 @@ Square *** setUpPuzzle(int ** puzzle)
     sudoku = (Square***)malloc(sizeof(Square**)*9);
     
     /*Loop through rows*/
-    for (i = 0; i < 9; i++)
+    for (i = 0; i < SIZE_ROWS; i++)
     {
         sudoku[i] = (Square**)malloc(sizeof(Square*)*9);
         
         /*Loop through columns*/
-        for (j = 0; j < 9; j++)
+        for (j = 0; j < SIZE_COLUMNS; j++)
         {
             sudoku[i][j] = (Square*)malloc(sizeof(Square)*9);
             sudoku[i][j]->number = puzzle[i][j];
@@ -22,7 +22,7 @@ Square *** setUpPuzzle(int ** puzzle)
             
             if (sudoku[i][j]->number != 0)
             {
-                sudoku[i][j]->code = FULL; 
+                sudoku[i][j]->code = POSSIBLE; 
             }
             else
             {
@@ -50,11 +50,11 @@ int ** createPuzzle()
 
     puzzle = (int**)malloc(sizeof(int*)*9);
 
-    for (i = 0; i < 9; i++)
+    for (i = 0; i < SIZE_ROWS; i++)
     {
         puzzle[i] = (int*)malloc(sizeof(int)*9);
 
-        for (j = 0; j < 9; j++)
+        for (j = 0; j < SIZE_COLUMNS; j++)
         {
             puzzle[i][j] = array[i][j];
         }

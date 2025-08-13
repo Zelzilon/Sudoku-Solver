@@ -1,7 +1,12 @@
+#ifndef SUDOKU_H
+#define SUDOKU_H
+
 #include <stdio.h>
 #include <stdlib.h>
 
-char FULL = 0x1FF;
+extern char POSSIBLE;
+extern int SIZE_ROWS;
+extern int SIZE_COLUMNS;
 
 typedef struct Box
 {
@@ -20,3 +25,5 @@ typedef struct Square
 int ** createPuzzle();
 void printPuzzle(int ** puzzle);
 Square *** setUpPuzzle(int ** puzzle);
+
+#endif
