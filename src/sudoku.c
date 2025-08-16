@@ -7,6 +7,7 @@ int SIZE_COLUMNS = 9;
 int main() 
 {
     int ** puzzle;
+    int progress;
     Sudoku * sudoku;
 
     puzzle = createPuzzle();
@@ -15,11 +16,17 @@ int main()
 
     printPuzzle(sudoku->squares);
 
-    checkPuzzle(sudoku->squares, sudoku->boxes);
-    checkPuzzle(sudoku->squares, sudoku->boxes);
-    checkPuzzle(sudoku->squares, sudoku->boxes);
-    checkPuzzle(sudoku->squares, sudoku->boxes);
-    checkPuzzle(sudoku->squares, sudoku->boxes);
+    while (UNSOLVED > 0)
+    {
+        progress = checkPuzzle(sudoku->squares, sudoku->boxes);
+
+        if (progress == 0)
+        {
+            printf("No more progress can be made.\n");
+            printf("Unsolved squares remaining: %d\n", UNSOLVED);
+            break;
+        }
+    }
 
     printf("\n\n");
 
