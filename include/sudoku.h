@@ -48,4 +48,6 @@ int boxSingles(Square *** sudoku, Box ** boxes);
 Box ** createBoxes();
 int updateBoxes(Square *** sudoku, int row, int column);
 
+int checkRows(Square *** sudoku, Box ** boxes);
+
 #endif

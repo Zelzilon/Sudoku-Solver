@@ -30,6 +30,15 @@ int main()
 
     printf("\n\n");
 
+    if (UNSOLVED == 0)
+    {
+        printf("Puzzle solved!\n");
+    }
+    else
+    {
+        printf("Puzzle unsolved.\n");
+    }
+
     printPuzzle(sudoku->squares);
 
     return 0;
