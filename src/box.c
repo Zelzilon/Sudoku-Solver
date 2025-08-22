@@ -82,16 +82,4 @@ int updateBoxes(Square *** sudoku, int row, int column)
             box->squares[i]->possible[number - 1] = 1;
         }
     }
-
-    /* Update solvable count in the box
-    box->solvable = 0;
-    for (int i = 0; i < 9; i++)
-    {
-        if (box->possible[i] == 0)
-        {
-            box->solvable++;
-        }
-    }
-
-    return 1;*/
 }
