@@ -50,4 +50,6 @@ int updateBoxes(Square *** sudoku, int row, int column);
 
 int checkRows(Square *** sudoku, Box ** boxes);
 
+int **cli_get_puzzle_input();
+
 #endif
